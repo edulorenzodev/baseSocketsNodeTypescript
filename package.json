@@ -1,0 +1,28 @@
+{
+  "name": "socketiodemo",
+  "version": "1.0.0",
+  "description": "A Socker.IO demo",
+  "main": "src/server.ts",
+  
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "author": "eduLorenzo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.9",
+    "@types/socket.io": "^2.1.12",
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "socket.io": "^3.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
